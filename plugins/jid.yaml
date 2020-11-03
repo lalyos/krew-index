@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: jid
+spec:
+  version: "v0.0.1"
+  homepage: https://github.com/lalyos/jidder
+  shortDescription: "Generates reusable bash functions with json-path magic."
+  description: |
+    kubectl plugin for generating reusable bash functions.
+
+    Usage:
+      interactively selecting resourceType, generated function is only printed
+        kubectl jid
+
+      preselecting resourceType to nodes, generated function is only printed
+        kubectl jid node
+
+      interactively selecting resourceType, function is sourced
+        eval $(kubectl jid)
+
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+    uri: https://github.com/lalyos/jidder/releases/download/v0.0.1/jidder.tgz
+    sha256: 82972d79165004841b27d04d0010d8339fc6db76e585e662f8f5accfce0373e5
+    files:
+    - from: "jidder-Linux"
+      to: "jidder"
+    bin: jidder
+  - selector:
+      matchLabels:
+        os: darwin
+    uri: https://github.com/lalyos/jidder/releases/download/v0.0.1/jidder.tgz
+    sha256: 82972d79165004841b27d04d0010d8339fc6db76e585e662f8f5accfce0373e5
+    files:
+    - from: "jidder-Darwin"
+      to: "jidder"
+    bin: jidder
