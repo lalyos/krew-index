@@ -1,23 +1,24 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: jid
+  name: jid-cols
 spec:
   version: "v0.0.1"
   homepage: https://github.com/lalyos/jidder
-  shortDescription: "Generates bash functions with jsonpath magic."
+  shortDescription: "Generates functions with -o custom-columns magic."
   description: |
-    kubectl plugin for generating bash functions with -o jsonpath.
+    kubectl plugin for generating bash functions for custom table.
 
     Usage:
+      bash function for a custom table: kubectl get -o custom-columns=...
       interactively selecting resourceType, generated function is only printed
-        kubectl jid
+        kubectl jid-cols
 
       preselecting resourceType to nodes, generated function is only printed
-        kubectl jid node
+        kubectl jid-cols node
 
       interactively selecting resourceType, function is sourced
-        eval $(kubectl jid)
+        eval $(kubectl jid-cols)
 
   platforms:
   - selector:
