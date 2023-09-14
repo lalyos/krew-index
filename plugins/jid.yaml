@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: jid
 spec:
-  version: "v0.0.1"
+  version: "v0.0.2"
   homepage: https://github.com/lalyos/jidder
   shortDescription: "Generates bash functions with jsonpath magic."
   description: |
@@ -23,18 +23,41 @@ spec:
   - selector:
       matchLabels:
         os: linux
-    uri: https://github.com/lalyos/jidder/releases/download/v0.0.1/jidder.tgz
-    sha256: 82972d79165004841b27d04d0010d8339fc6db76e585e662f8f5accfce0373e5
+        arch: arm64
+    uri: https://github.com/lalyos/jidder/releases/download/v0.0.2/jidder.tgz
+    sha256: 391f20e6090b23c47fef1b6fbe4e63fd168e263c370cf72bbbe4c2ad4a9081aa
     files:
-    - from: "jidder-Linux"
+    - from: "jidder-Linux-arm64"
+      to: "jidder"
+    bin: jidder
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/lalyos/jidder/releases/download/v0.0.2/jidder.tgz
+    sha256: 391f20e6090b23c47fef1b6fbe4e63fd168e263c370cf72bbbe4c2ad4a9081aa
+    files:
+    - from: "jidder-Linux-amd64"
       to: "jidder"
     bin: jidder
   - selector:
       matchLabels:
         os: darwin
-    uri: https://github.com/lalyos/jidder/releases/download/v0.0.1/jidder.tgz
-    sha256: 82972d79165004841b27d04d0010d8339fc6db76e585e662f8f5accfce0373e5
+        arch: arm64
+    uri: https://github.com/lalyos/jidder/releases/download/v0.0.2/jidder.tgz
+    sha256: 391f20e6090b23c47fef1b6fbe4e63fd168e263c370cf72bbbe4c2ad4a9081aa
     files:
-    - from: "jidder-Darwin"
+    - from: "jidder-Darwin-arm64"
       to: "jidder"
     bin: jidder
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/lalyos/jidder/releases/download/v0.0.2/jidder.tgz
+    sha256: 391f20e6090b23c47fef1b6fbe4e63fd168e263c370cf72bbbe4c2ad4a9081aa
+    files:
+    - from: "jidder-Darwin-amd64"
+      to: "jidder"
+    bin: jidder
+
