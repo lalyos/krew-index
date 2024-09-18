@@ -1,7 +1,7 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: popely
+  name: popeye
 spec:
   homepage: https://popeyecli.io
   shortDescription: Scans your clusters for potential resource issues
